@@ -3,139 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>የመንፈሳዊ በረከት ጉዞ ትኬት</title>
+    <title>ታላቅ መንፈሳዊ የበረከት ጉዞ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans Ethiopic', sans-serif;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            background-color: #1a1a1a;
+            color: white;
         }
-        .ticket-shadow {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        .ticket-border {
+            border: 2px solid #333;
+            background-color: #000;
         }
-        .img-container {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .glass-header {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 12px;
-        }
-        
-        /* Print Specific Styles */
         @media print {
-            body {
-                background: white !important;
-                padding: 0;
-                margin: 0;
-            }
-            .no-print {
-                display: none !important;
-            }
-            .ticket {
-                box-shadow: none !important;
-                border: 1px solid #eee !important;
-                margin: 0 auto;
-            }
-            .ticket-shadow {
-                box-shadow: none !important;
-            }
+            .no-print { display: none !important; }
+            body { background-color: white; color: black; }
+            .ticket-border { border: 1px solid #000; background-color: white; }
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-6">
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
 
     <!-- Main Ticket Container -->
-    <div id="printable-ticket" class="ticket max-w-sm w-full bg-white rounded-3xl overflow-hidden ticket-shadow border border-white">
+    <div class="ticket-border w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
         
-        <!-- Image Header -->
-        <div class="img-container">
-            <img src="image_57fa3f.jpg" alt="Bezawit Mariam" onerror="this.src='https://via.placeholder.com/400x220?text=Bezawit+Mariam'">
-            <div class="glass-header">
-                <h1 class="text-white text-center font-black text-lg tracking-wide">† የቤዛዊት ማርያም መንፈሳዊ ጉዞ †</h1>
-            </div>
+        <!-- Header Image -->
+        <div class="w-full h-56 relative">
+            <img src="image_57fa3f.jpg" alt="Bezawit Mariam" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x200?text=Bezawit+Mariam'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
         </div>
 
-        <!-- Ticket Info -->
+        <!-- Ticket Content -->
         <div class="p-6 space-y-6">
             
-            <!-- Destination -->
-            <div class="flex items-center space-x-4 border-b border-gray-100 pb-4">
-                <div class="bg-green-100 p-3 rounded-2xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+            <!-- Title -->
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <span class="text-purple-500 text-xl">✝</span>
+                <h1 class="text-xl font-bold text-center tracking-wide">ታላቅ መንፈሳዊ የበረከት ጉዞ</h1>
+                <span class="text-purple-500 text-xl">✝</span>
+            </div>
+
+            <!-- Details List -->
+            <div class="space-y-4">
+                <!-- Destination -->
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl">📍</span>
+                    <div>
+                        <p class="text-sm font-bold leading-tight">መድረሻ፡ ቤዛዊት ማርያም ገዳም</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-gray-400 text-[10px] uppercase font-bold tracking-widest">መድረሻ (Destination)</p>
-                    <h2 class="text-xl font-bold text-gray-800">ቤዛዊት ማርያም ገዳም</h2>
+
+                <!-- Date -->
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl">📅</span>
+                    <div>
+                        <p class="text-sm font-bold leading-tight">የጉዞ ቀን፡ ግንቦት 9 / 2018</p>
+                    </div>
+                </div>
+
+                <!-- Time -->
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl">⏰</span>
+                    <div>
+                        <p class="text-sm font-bold leading-tight">መነሻ ሰዓት፡ 12 ሰዓት ጠዋት</p>
+                    </div>
+                </div>
+
+                <!-- Pickup -->
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl">📍</span>
+                    <div>
+                        <p class="text-sm font-bold leading-tight">መነሻ ቦታ፡ ቶታል ኪዳነ ምህረት</p>
+                    </div>
+                </div>
+
+                <!-- Price -->
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl">💰</span>
+                    <div>
+                        <p class="text-sm font-bold leading-tight">የጉዞ ዋጋ፡ ከነ መስተንግዶ 450 ብር</p>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="flex items-center gap-4 pt-2 border-t border-gray-800">
+                    <span class="text-2xl">📞</span>
+                    <div>
+                        <p class="text-sm font-bold tracking-widest text-gray-300">0970984440 / 0948456209</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Date and Time Grid -->
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <p class="text-gray-400 text-[10px] font-bold">ቀን (Date)</p>
-                    <p class="text-gray-800 font-bold">ግንቦት 9 / 2018</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                    <p class="text-gray-400 text-[10px] font-bold">ሰዓት (Time)</p>
-                    <p class="text-gray-800 font-bold">12:00 ጠዋት</p>
-                </div>
+            <!-- Footer Message -->
+            <div class="text-center pt-4 italic text-yellow-500">
+                <p class="text-sm">🙏 ከእኛ ጋር በመጓዝ በረከትን ያግኙ!</p>
             </div>
-
-            <!-- Pickup Point -->
-            <div class="flex items-center space-x-4">
-                <div class="bg-orange-50 p-3 rounded-2xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="text-gray-400 text-[10px] font-bold">መነሻ (Pickup)</p>
-                    <p class="text-gray-800 font-semibold">ቶታል ኪዳነ ምህረት</p>
-                </div>
-            </div>
-
-            <!-- Price & Contact Section -->
-            <div class="bg-green-700 rounded-3xl p-5 text-white flex justify-between items-center relative overflow-hidden">
-                <div class="absolute -right-4 -bottom-4 w-16 h-16 bg-green-600 rounded-full opacity-50"></div>
-                
-                <div>
-                    <p class="text-green-200 text-[10px] font-bold">የጉዞ ዋጋ (Price)</p>
-                    <p class="text-3xl font-black italic">450 <span class="text-sm font-normal not-italic">ብር</span></p>
-                </div>
-                <div class="text-right z-10">
-                    <p class="text-green-200 text-[10px] font-bold">Contact</p>
-                    <p class="text-xs font-bold leading-tight">0970984440</p>
-                    <p class="text-xs font-bold leading-tight">0948456209</p>
-                </div>
-            </div>
-
-            <p class="text-center text-xs text-gray-400 font-medium">🙏 ከእኛ ጋር በመጓዝ በረከትን ያግኙ!</p>
         </div>
     </div>
 
-    <!-- Print Button -->
-    <button onclick="window.print()" class="no-print mt-8 flex items-center space-x-2 bg-gray-800 hover:bg-black text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-        </svg>
-        <span>ትኬቱን አትም (Print Ticket)</span>
-    </button>
+    <!-- Actions -->
+    <div class="no-print mt-8 flex flex-col items-center gap-4">
+        <button onclick="window.print()" class="bg-white text-black font-bold px-8 py-3 rounded-full hover:bg-gray-200 transition-colors shadow-lg">
+            🖨️ ትኬቱን አትም (Print Ticket)
+        </button>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest">Developed by Abenezer Zerihun</p>
+    </div>
 
 </body>
 </html>

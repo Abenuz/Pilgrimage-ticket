@@ -9,120 +9,89 @@
     <style>
         body {
             font-family: 'Noto Sans Ethiopic', sans-serif;
-            background: #f0f2f5;
+            background-color: #f3f4f6;
         }
-        .ticket-clip {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 2% 50%);
-        }
-        @media print {
-            .no-print { display: none; }
-            body { background: white; }
+        /* This ensures the image looks good on all screens */
+        .header-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid #16a34a;
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4">
+<body class="flex items-center justify-center min-h-screen p-4">
 
-    <!-- Ticket Container -->
-    <div id="ticket" class="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-md w-full border-t-8 border-green-600">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
         
-        <!-- Header Image (The Monastery) -->
-        <div class="relative h-56 bg-gray-200">
-            <img src="image_57fa3f.jpg" alt="Monastery" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                <h1 class="text-white text-2xl font-bold">† ታላቅ መንፈሳዊ የበረከት ጉዞ †</h1>
+        <!-- 1. ADDING THE IMAGE -->
+        <!-- Make sure image_57fa3f.jpg is uploaded to the same folder as this index.html file -->
+        <div class="relative">
+            <img src="image_57fa3f.jpg" alt="Bezawit Mariam Monastery" class="header-image">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-4">
+                <h1 class="text-white text-xl font-bold">† ታላቅ መንፈሳዊ የበረከት ጉዞ †</h1>
             </div>
         </div>
 
-        <!-- Ticket Details -->
-        <div class="p-6 space-y-4">
-            <div class="flex items-center space-x-4 text-gray-700">
+        <!-- Ticket Body -->
+        <div class="p-6 space-y-5">
+            <div class="flex items-start space-x-4">
                 <span class="text-2xl">📍</span>
                 <div>
-                    <p class="text-xs text-gray-500">መድረሻ</p>
-                    <p class="font-bold text-lg">ቤዛዊት ማርያም ገዳም</p>
+                    <p class="text-gray-500 text-xs">መድረሻ (Destination)</p>
+                    <p class="font-bold text-lg text-gray-800">ቤዛዊት ማርያም ገዳም</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-center space-x-3 text-gray-700">
-                    <span class="text-xl">📅</span>
-                    <div>
-                        <p class="text-xs text-gray-500">የጉዞ ቀን</p>
-                        <p class="font-semibold">ግንቦት 9 / 2018</p>
-                    </div>
+            <div class="grid grid-cols-2 gap-4 bg-green-50 p-3 rounded-lg">
+                <div>
+                    <p class="text-gray-500 text-xs">ቀን (Date)</p>
+                    <p class="font-bold text-gray-800">ግንቦት 9 / 2018</p>
                 </div>
-                <div class="flex items-center space-x-3 text-gray-700">
-                    <span class="text-xl">⏰</span>
-                    <div>
-                        <p class="text-xs text-gray-500">መነሻ ሰዓት</p>
-                        <p class="font-semibold">12 ሰዓት ጠዋት</p>
-                    </div>
+                <div>
+                    <p class="text-gray-500 text-xs">ሰዓት (Time)</p>
+                    <p class="font-bold text-gray-800">12:00 ጠዋት</p>
                 </div>
             </div>
 
-            <div class="flex items-center space-x-4 text-gray-700">
+            <div class="flex items-start space-x-4">
                 <span class="text-2xl">🚩</span>
                 <div>
-                    <p class="text-xs text-gray-500">መነሻ ቦታ</p>
-                    <p class="font-semibold">ቶታል ኪዳነ ምህረት</p>
+                    <p class="text-gray-500 text-xs">መነሻ ቦታ (Pickup)</p>
+                    <p class="font-semibold text-gray-800">ቶታል ኪዳነ ምህረት</p>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between py-4 border-y border-dashed border-gray-300">
-                <div class="flex items-center space-x-3">
-                    <span class="text-xl">💰</span>
-                    <div>
-                        <p class="text-xs text-gray-500">የጉዞ ዋጋ</p>
-                        <p class="font-bold text-xl text-green-700">450 ብር</p>
-                    </div>
+            <div class="border-t border-dashed border-gray-300 pt-4 flex justify-between items-center">
+                <div>
+                    <p class="text-gray-500 text-xs">የጉዞ ዋጋ (Price)</p>
+                    <p class="text-2xl font-black text-green-700">450 ብር</p>
+                    <p class="text-[10px] text-gray-400">ከነ መስተንግዶው (Including Refreshments)</p>
                 </div>
                 <div class="text-right">
-                    <p class="text-xs text-gray-400">ከነ መስተንግዶው</p>
+                    <p class="text-xs text-gray-400">ስልክ ቁጥር</p>
+                    <p class="text-sm font-bold text-gray-700">0970984440</p>
+                    <p class="text-sm font-bold text-gray-700">0948456209</p>
                 </div>
             </div>
 
-            <!-- Contact & Footer -->
-            <div class="bg-gray-50 p-4 rounded-xl space-y-2">
-                <p class="flex items-center text-sm text-gray-600">
-                    <span class="mr-2">📞</span> 0970984440 / 0948456209
-                </p>
-                <p class="text-center font-bold text-green-800 pt-2 border-t border-gray-200">
-                    🙏 ከእኛ ጋር በመጓዝ በረከትን ያግኙ!
-                </p>
+            <div class="bg-gray-100 p-3 rounded-md text-center">
+                <p class="text-green-800 font-bold text-sm">🙏 ከእኛ ጋር በመጓዝ በረከትን ያግኙ!</p>
             </div>
         </div>
 
-        <!-- Fake Perforation -->
-        <div class="relative h-4 bg-gray-100 flex items-center justify-center">
-            <div class="w-full border-t-2 border-dashed border-gray-300"></div>
-            <div class="absolute -left-4 w-8 h-8 bg-gray-200 rounded-full"></div>
-            <div class="absolute -right-4 w-8 h-8 bg-gray-200 rounded-full"></div>
-        </div>
-        
-        <!-- Bottom Section -->
-        <div class="p-6 bg-gray-100 text-center">
-            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Ticket ID: PILGRIM-2018-09</p>
-            <div class="inline-block bg-white p-2 rounded-lg shadow-sm">
-                <!-- Simple Mock Barcode -->
-                <div class="flex space-x-1 h-8 items-center">
-                    <div class="w-1 bg-black h-full"></div>
-                    <div class="w-0.5 bg-black h-full"></div>
-                    <div class="w-2 bg-black h-full"></div>
-                    <div class="w-1 bg-black h-full"></div>
-                    <div class="w-0.5 bg-black h-full"></div>
-                    <div class="w-1.5 bg-black h-full"></div>
-                    <div class="w-1 bg-black h-full"></div>
-                    <div class="w-2 bg-black h-full"></div>
-                </div>
+        <!-- Footer / Barcode decoration -->
+        <div class="bg-gray-50 p-4 border-t flex flex-col items-center">
+            <div class="flex space-x-1 mb-2">
+                <div class="w-1 h-6 bg-gray-400"></div>
+                <div class="w-0.5 h-6 bg-gray-400"></div>
+                <div class="w-2 h-6 bg-gray-400"></div>
+                <div class="w-1 h-6 bg-gray-400"></div>
+                <div class="w-0.5 h-6 bg-gray-400"></div>
+                <div class="w-1 h-6 bg-gray-400"></div>
             </div>
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest">Authorized Ticket</p>
         </div>
-    </div>
-
-    <!-- Controls -->
-    <div class="mt-8 no-print flex space-x-4">
-        <button onclick="window.print()" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:bg-green-700 transition">
-            ትኬቱን አትም (Print)
-        </button>
     </div>
 
 </body>
